@@ -12,7 +12,7 @@ RocketMovies - Frontend
 <br>
 
 <p align="center">
-  <img alt="RocketMovies" src="./src/assets/preview.png" width="100%">
+  <img alt="RocketMovies" src="./rocketmovies/src/assets/preview.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
