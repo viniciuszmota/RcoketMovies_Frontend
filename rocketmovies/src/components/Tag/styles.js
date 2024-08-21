@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.span`
   font-size: 1.2rem;
@@ -8,5 +8,4 @@ export const Container = styled.span`
 
   color: ${({ theme }) => theme.COLORS.GRAY_600};
   background: ${({ theme }) => theme.COLORS.GRAY_400};
-
-`;
+`

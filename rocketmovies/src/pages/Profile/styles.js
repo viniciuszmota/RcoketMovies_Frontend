@@ -1,28 +1,27 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-  
 
   > header {
     width: 100%;
-    background: ${({ theme }) => theme.COLORS.PINK + '0D'};
+    background: ${({ theme }) => theme.COLORS.PINK + "0D"};
 
     .header {
-      padding: 0 1.0rem;
+      padding: 0 1rem;
       max-width: 113.7rem;
       height: 14.4rem;
       margin: 0 auto;
       display: flex;
     }
   }
-`;
+`
 
 export const Form = styled.form`
-  max-width: 36.0rem;
+  max-width: 36rem;
   margin: 0 auto;
-  padding: 0 2.0rem;
+  padding: 0 2rem;
 
   > div:nth-child(4) {
     margin-top: 2.4rem;
@@ -31,15 +30,14 @@ export const Form = styled.form`
   > div:nth-child(5) {
     margin-bottom: 2.4rem;
   }
-
-`;
+`
 
 export const Avatar = styled.div`
   width: 18.6rem;
   height: 18.6rem;
 
   position: relative;
-  margin: -9.0rem auto 6.4rem;
+  margin: -9rem auto 6.4rem;
 
   > img {
     width: 18.6rem;
@@ -53,7 +51,7 @@ export const Avatar = styled.div`
     height: 4.8rem;
     background: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 50%;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,9 +65,9 @@ export const Avatar = styled.div`
     }
 
     svg {
-    width: 2.0rem;
-    height: 2.0rem;
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+      width: 2rem;
+      height: 2rem;
+      color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    }
   }
-}
-`;
+`

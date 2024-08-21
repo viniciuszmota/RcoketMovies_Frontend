@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.COLORS.GRAY_500};
 
   margin-bottom: 0.8rem;
-  border-radius: 1.0rem;
+  border-radius: 1rem;
 
   > input {
     font-family: "Roboto", sans-serif;
@@ -26,10 +26,10 @@ export const Container = styled.div`
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_500};
       font-family: "Roboto", sans-serif;
-    } 
+    }
   }
 
   > svg {
     margin-left: 1.6rem;
   }
-`;
+`

@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled from "styled-components"
 
 export const Container = styled.button`
   background: none;
@@ -12,5 +11,4 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
-`;
+`

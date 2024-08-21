@@ -1,14 +1,16 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme, $isNew }) => $isNew ? "transparent" : theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme, $isNew }) =>
+    $isNew ? "transparent" : theme.COLORS.BACKGROUND_700};
 
   color: ${({ theme }) => theme.COLORS.GRAY_500};
 
-  border: ${({ theme, $isNew }) => $isNew ? `2px dashed ${theme.COLORS.GRAY_500}` : "none"};
+  border: ${({ theme, $isNew }) =>
+    $isNew ? `2px dashed ${theme.COLORS.GRAY_500}` : "none"};
 
   border-radius: 1rem;
   padding-right: 1.6rem;
@@ -17,12 +19,10 @@ export const Container = styled.div`
   > button {
     border: none;
     background: none;
-    
   }
 
   .button-add {
     color: ${({ theme }) => theme.COLORS.PINK};
-    
   }
 
   .button-delete {
@@ -46,6 +46,4 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_500};
     }
   }
-
-
-`;
+`

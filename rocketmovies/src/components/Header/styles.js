@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled from "styled-components"
 
 export const Container = styled.header`
   grid-area: header;
@@ -42,12 +41,11 @@ export const Container = styled.header`
       }
     }
   }
-`;
+`
 
 export const Profile = styled.div`
   display: flex;
   color: ${({ theme }) => theme.COLORS.GRAY_900};
-
 
   > img {
     width: 5.6rem;
@@ -55,7 +53,7 @@ export const Profile = styled.div`
     border-radius: 50%;
     border: 1px solid #3b3b3b;
   }
-`;
+`
 
 export const Logout = styled.button`
   font-size: 1.4rem;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   display: flex;
@@ -6,7 +6,5 @@ export const Container = styled.div`
   gap: 1rem;
 
   color: ${({ theme }) => theme.COLORS.PINK};
-  font-size: ${({ big }) => big ? '2.0rem' : '1.2rem'};
-`;
-
-
+  font-size: ${({ big }) => (big ? "2.0rem" : "1.2rem")};
+`
