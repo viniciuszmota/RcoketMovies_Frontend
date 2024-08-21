@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled from "styled-components"
 
 export const Container = styled.div`
   width: 100%;
@@ -8,9 +7,9 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 10.5rem auto;
   grid-template-areas:
-  "header"
-  "content";
-  padding: 0 5.0rem;
+    "header"
+    "content";
+  padding: 0 5rem;
 
   main {
     grid-area: content;
@@ -20,7 +19,7 @@ export const Container = styled.div`
     margin: 4rem auto 0;
     padding-right: 1.5rem;
   }
-`;
+`
 
 export const Content = styled.div`
   color: ${({ theme }) => theme.COLORS.GRAY_900};
@@ -47,7 +46,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 4.0rem;
+    margin-bottom: 4rem;
 
     .user {
       display: flex;
@@ -76,7 +75,7 @@ export const Content = styled.div`
 
   p {
     text-align: justify;
-    margin-top: 4.0rem;
+    margin-top: 4rem;
     max-width: 111.3rem;
   }
-`;
+`

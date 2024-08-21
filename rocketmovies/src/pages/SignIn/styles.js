@@ -1,20 +1,20 @@
-import styled from 'styled-components';
-import backgroundImg from '../../assets/background.png'
+import styled from "styled-components"
+import backgroundImg from "../../assets/background.png"
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-`;
+`
 
 export const Form = styled.form`
-  padding: 13.0rem;
+  padding: 13rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   :nth-child(6) {
-    margin-top: 2.4rem
+    margin-top: 2.4rem;
   }
 
   > h1 {
@@ -33,7 +33,7 @@ export const Form = styled.form`
     font-size: 2.4rem;
     font-weight: 500;
     color: ${({ theme }) => theme.COLORS.GRAY_900};
-    margin: 4.8rem 0
+    margin: 4.8rem 0;
   }
 
   > a {
@@ -41,11 +41,10 @@ export const Form = styled.form`
     margin-top: 4.2rem;
     text-align: center;
   }
-  
-`;
+`
 
 export const Background = styled.div`
   flex: 1;
   background: url(${backgroundImg});
   background-size: cover;
-`;
+`
