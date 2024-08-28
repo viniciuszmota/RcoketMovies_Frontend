@@ -56,6 +56,7 @@ export const Content = styled.div`
       img {
         width: 1.6rem;
         border-radius: 50%;
+        margin-right: 1.6rem;
         border: 1px solid ${({ theme }) => theme.COLORS.GRAY_700};
       }
     }

@@ -1,5 +1,10 @@
 import { Container, Form } from "./styles"
 
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+import { api } from "../../services/api"
+
 import { ButtonText } from "../../components/ButtonText"
 import { MovieItem } from "../../components/MovieItem"
 import { Scroll } from "../../components/Scroll"
@@ -12,6 +17,60 @@ import { Input } from "../../components/Input"
 import { Link } from "react-router-dom"
 
 export function New() {
+  const [title, setTitle] = useState("")
+  const [rating, setRating] = useState("")
+  const [description, setDescription] = useState("")
+
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState("")
+
+  const navigate = useNavigate()
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newTag])
+    setNewTag("")
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted))
+  }
+
+  async function handleNewNote(event) {
+    event.preventDefault()
+
+    if (!title) {
+      return alert("Digite o título do filme!")
+    }
+
+    if (isNaN(Number(rating)) || rating > 5 || rating < 0) {
+      return alert("Avalie este filme de 0 a 5")
+    }
+
+    if (!description) {
+      return alert("Digite a descrição do filme")
+    }
+
+    if (newTag) {
+      return alert(
+        "Você deixou uma tag no campo de adicionar. Clique para adicionar ou deixe o campo vazio!"
+      )
+    }
+
+    await api.post("/notes", {
+      title,
+      rating,
+      description,
+      tags,
+    })
+
+    alert("Nota criada com sucesso!")
+    handleBack()
+  }
+
+  function handleBack() {
+    navigate(-1)
+  }
+
   return (
     <Container>
       <Header />
@@ -20,31 +79,54 @@ export function New() {
         <main>
           <Form>
             <header>
-              <Link to="/">
+              <Link onClick={handleBack}>
                 <ButtonText title="Voltar" />
               </Link>
               <h1>Novo filme</h1>
             </header>
 
             <div className="box-input">
-              <Input placeholder="Título" />
+              <Input
+                placeholder="Título"
+                onChange={(e) => setTitle(e.target.value)}
+              />
 
-              <Input placeholder="Sua nota (de 0 a 5)" />
+              <Input
+                placeholder="Sua nota (de 0 a 5)"
+                onChange={(e) => setRating(e.target.value)}
+              />
             </div>
 
-            <TextArea placeholder="Observações" />
+            <TextArea
+              placeholder="Observações"
+              onChange={(e) => setDescription(e.target.value)}
+            />
 
             <Section title="Marcadores">
               <div className="markers">
-                <MovieItem value="Drama" />
+                {tags.map((tag, index) => (
+                  <MovieItem
+                    key={String(index)}
+                    value={tag}
+                    onClick={() => {
+                      handleRemoveTag(tag)
+                    }}
+                  />
+                ))}
 
-                <MovieItem $isNew placeholder="Novo marcador" />
+                <MovieItem
+                  $isNew
+                  placeholder="Novo marcador"
+                  onChange={(e) => setNewTag(e.target.value)}
+                  value={newTag}
+                  onClick={handleAddTag}
+                />
               </div>
             </Section>
 
             <div className="box-button">
               <Button $trash title="Excluir filme" />
-              <Button title="Salvar alterações" />
+              <Button title="Salvar alterações" onClick={handleNewNote} />
             </div>
           </Form>
         </main>
